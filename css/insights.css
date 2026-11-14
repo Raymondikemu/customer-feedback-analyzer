@@ -1,0 +1,303 @@
+/* ==========================================================
+   INSIGHTS & RECOMMENDATIONS PAGE
+========================================================== */
+
+/* ==========================
+   OVERALL SCORE
+========================== */
+
+.overall-score{
+
+    margin:30px 0;
+
+}
+
+.score-card{
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.score-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.score-card i{
+
+    font-size:50px;
+
+    color:#6C63FF;
+
+    margin-bottom:20px;
+
+}
+
+.score-card h2{
+
+    font-size:48px;
+
+    margin-bottom:12px;
+
+}
+
+.score-card p{
+
+    color:#777;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   INSIGHT GRID
+========================== */
+
+.insight-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-bottom:25px;
+
+}
+
+.insight-card{
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.insight-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+    color:#1F2937;
+
+}
+
+.insight-card h2 i{
+
+    color:#6C63FF;
+
+}
+
+/* ==========================
+   RECOMMENDATION CARD
+========================== */
+
+.recommendation-card{
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.recommendation-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+.recommendation-card h2 i{
+
+    color:#6C63FF;
+
+}
+
+/* ==========================
+   EMPTY BOXES
+========================== */
+
+.empty-box{
+
+    background:#F8F9FD;
+
+    border:2px dashed #D6D8E7;
+
+    border-radius:15px;
+
+    min-height:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+}
+
+.trend-box{
+
+    flex-direction:column;
+
+}
+
+.trend-box i{
+
+    font-size:60px;
+
+    color:#6C63FF;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================
+   ACTION BUTTONS
+========================== */
+
+.insight-actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:35px;
+
+}
+
+.back-btn,
+.report-btn{
+
+    padding:15px 28px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-btn{
+
+    background:#E5E7EB;
+
+    color:#374151;
+
+}
+
+.back-btn:hover{
+
+    background:#D1D5DB;
+
+}
+
+.report-btn{
+
+    background:#6C63FF;
+
+    color:#FFFFFF;
+
+}
+
+.report-btn:hover:not(:disabled){
+
+    background:#5449FF;
+
+    transform:translateY(-3px);
+
+}
+
+.report-btn:disabled{
+
+    background:#C7C7C7;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+    .insight-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .insight-actions{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .back-btn,
+    .report-btn{
+
+        width:100%;
+
+    }
+
+    .score-card h2{
+
+        font-size:38px;
+
+    }
+
+}

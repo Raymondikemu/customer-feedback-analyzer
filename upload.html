@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Reviews | Customer Feedback Analyzer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/upload.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===========================
+         SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-box">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+
+                <div>
+
+                    <h2>Customer Feedback Analyzer</h2>
+                    <p>Admin Panel</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fa-solid fa-house"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="upload.html">
+                            <i class="fa-solid fa-upload"></i>
+                            Upload Reviews
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reviews.html">
+                            <i class="fa-solid fa-list"></i>
+                            Reviews List
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="analysis.html">
+                            <i class="fa-solid fa-face-smile"></i>
+                            Sentiment Analysis
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="insights.html">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Insights
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reports.html">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <i class="fa-solid fa-gear"></i>
+                            Settings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            Logout
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </aside>
+
+    <!-- ===========================
+         MAIN CONTENT
+    ============================ -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Upload Reviews</h1>
+
+                <p>Select a CSV or Excel file containing customer reviews.</p>
+
+            </div>
+
+        </header>
+
+        <!-- Upload Area -->
+
+        <section class="upload-section">
+
+            <div class="upload-box" id="dropArea">
+
+                <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+                <h2>Drag & Drop Review File</h2>
+
+                <p>
+
+                    Supported Formats
+
+                    <strong>.CSV</strong>
+
+                    and
+
+                    <strong>.XLSX</strong>
+
+                </p>
+
+                <span>or</span>
+
+                <button id="browseBtn" class="browse-btn">
+
+                    Browse Files
+
+                </button>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".csv,.xlsx"
+                    hidden>
+
+            </div>
+
+        </section>
+
+        <!-- Selected File -->
+
+        <section class="file-card">
+
+            <div class="file-header">
+
+                <i class="fa-solid fa-file-csv"></i>
+
+                <div>
+
+                    <h3 id="fileName">
+
+                        No file selected
+
+                    </h3>
+
+                    <p id="fileSize">
+
+                        File size will appear here
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="file-buttons">
+
+                <button
+                    class="remove-btn"
+                    id="removeBtn">
+
+                    Remove
+
+                </button>
+
+                <button
+                    class="upload-btn"
+                    id="uploadBtn">
+
+                    Upload Reviews
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Upload Status -->
+
+        <section
+            class="upload-status"
+            id="statusMessage">
+
+        </section>
+
+        <!-- Continue -->
+
+        <div class="continue-section">
+
+            <button
+                class="continue-btn"
+                id="continueBtn"
+                disabled>
+
+                Continue to Reviews List
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/upload.js"></script>
+
+</body>
+
+</html>

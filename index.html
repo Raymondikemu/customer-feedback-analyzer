@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Feedback Analyzer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+
+    <!-- Background Circles -->
+
+    <div class="background">
+
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+
+    </div>
+
+    <!-- Main Container -->
+
+    <div class="login-container">
+
+        <!-- ==========================================
+             LEFT PANEL
+        ========================================== -->
+
+        <section class="left-panel">
+
+            <!-- Logo -->
+
+            <div class="logo">
+
+                <div class="logo-box">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+                <div>
+
+                    <h1>Customer Feedback Analyzer</h1>
+
+                    <p>Turning Customer Voices into Actionable Insights</p>
+
+                </div>
+
+            </div>
+
+            <!-- Floating Cards -->
+
+            <div class="cards">
+
+                <!-- Review Card -->
+
+                <div class="review-card">
+
+                    <div class="stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                    <h3>Excellent Product</h3>
+
+                    <p>
+
+                        "Amazing quality and very fast delivery."
+
+                    </p>
+
+                    <span class="positive">
+
+                        Positive Review
+
+                    </span>
+
+                </div>
+
+                <!-- Analytics Card -->
+
+                <div class="analytics-card">
+
+                    <h3>Today's Analysis</h3>
+
+                    <div class="stat">
+
+                        <span>😊 Positive</span>
+
+                        <span>68%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill positive-fill"></div>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <span>😐 Neutral</span>
+
+                        <span>20%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill neutral-fill"></div>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <span>😞 Negative</span>
+
+                        <span>12%</span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-fill negative-fill"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             RIGHT PANEL
+        ========================================== -->
+
+        <section class="right-panel">
+
+            <div class="login-card">
+
+                <h2>
+
+                    Welcome Back 👋
+
+                </h2>
+
+                <p>
+
+                    Login to access your dashboard.
+
+                </p>
+
+                <form id="loginForm">
+
+                    <!-- Email -->
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email Address"
+                            required>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Password"
+                            required>
+
+                        <i
+                            class="fa-solid fa-eye toggle-password"
+                            id="togglePassword">
+
+                        </i>
+
+                    </div>
+
+                    <!-- Options -->
+
+                    <div class="options">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Remember Me
+
+                        </label>
+
+                        <a href="#">
+
+                            Forgot Password?
+
+                        </a>
+
+                    </div>
+
+                    <!-- Button -->
+
+                    <button
+                        class="login-btn"
+                        type="submit">
+
+                        Login
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

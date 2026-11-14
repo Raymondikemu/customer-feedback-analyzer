@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Customer Feedback Analyzer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         DASHBOARD CONTAINER
+    ========================================== -->
+
+    <div class="dashboard">
+
+        <!-- ==========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <div class="logo-box">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Customer Feedback Analyzer</h2>
+
+                    <p>Admin Panel</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fa-solid fa-house"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="upload.html">
+                            <i class="fa-solid fa-upload"></i>
+                            Upload Reviews
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reviews.html">
+                            <i class="fa-solid fa-list"></i>
+                            Reviews List
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="analysis.html">
+                            <i class="fa-solid fa-face-smile"></i>
+                            Sentiment Analysis
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="insights.html">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Insights
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reports.html">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <i class="fa-solid fa-gear"></i>
+                            Settings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            Logout
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+        <!-- ==========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Dashboard</h1>
+
+                    <p>Welcome back, Admin.</p>
+
+                </div>
+
+                <div class="topbar-right">
+
+                    <button class="notification-btn">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                    </button>
+
+                    <div class="admin-profile">
+
+                        <i class="fa-solid fa-user-circle"></i>
+
+                        <span>Administrator</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Statistics Cards -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    <h2 id="totalReviews">0</h2>
+
+                    <p>Total Reviews</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-face-smile"></i>
+
+                    <h2 id="positiveReviews">0</h2>
+
+                    <p>Positive</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-face-meh"></i>
+
+                    <h2 id="neutralReviews">0</h2>
+
+                    <p>Neutral</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-face-frown"></i>
+
+                    <h2 id="negativeReviews">0</h2>
+
+                    <p>Negative</p>
+
+                </div>
+
+            </section>
+
+            <!-- Dashboard Grid -->
+
+            <section class="dashboard-grid">
+
+                <!-- Sentiment Chart -->
+
+                <div class="card chart-card">
+
+                    <h3>Sentiment Overview</h3>
+
+                    <canvas id="sentimentChart"></canvas>
+
+                </div>
+
+                <!-- Dataset Information -->
+
+                <div class="card">
+
+                    <h3>Dataset Information</h3>
+
+                    <div class="dataset-info">
+
+                        <p><strong>Reviews Imported:</strong> <span id="datasetReviews">0</span></p>
+
+                        <p><strong>Analysis Status:</strong> <span id="datasetStatus">Waiting</span></p>
+
+                        <p><strong>Overall Sentiment:</strong> <span id="datasetSentiment">Not Available</span></p>
+
+                    </div>
+
+                </div>
+
+                <!-- Recent Reviews -->
+
+                <div class="card">
+
+                    <h3>Recent Reviews</h3>
+
+                    <ul id="recentReviewsList"></ul>
+
+                    <button class="action-btn"
+                        onclick="window.location.href='reviews.html'">
+
+                        View All Reviews
+
+                    </button>
+
+                </div>
+
+                <!-- Quick Actions -->
+
+                <div class="card">
+
+                    <h3>Quick Actions</h3>
+
+                    <button class="action-btn">Upload Reviews</button>
+
+                    <button class="action-btn">Run Analysis</button>
+
+                    <button class="action-btn">Export Report</button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

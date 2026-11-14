@@ -1,0 +1,369 @@
+/* ==========================================================
+   UPLOAD REVIEWS PAGE
+========================================================== */
+
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+
+.upload-section{
+
+    margin-top:30px;
+
+}
+
+.upload-box{
+
+    background:#FFFFFF;
+
+    border:3px dashed #6C63FF;
+
+    border-radius:20px;
+
+    min-height:340px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+    padding:40px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.upload-box:hover{
+
+    background:#F8F7FF;
+
+    transform:translateY(-4px);
+
+}
+
+.upload-box.dragover{
+
+    background:#ECE9FF;
+
+    border-color:#4F46E5;
+
+    transform:scale(1.02);
+
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.upload-icon{
+
+    font-size:70px;
+
+    color:#6C63FF;
+
+    margin-bottom:20px;
+
+}
+
+.upload-box h2{
+
+    margin-bottom:15px;
+
+}
+
+.upload-box p{
+
+    margin-bottom:18px;
+
+}
+
+.upload-box span{
+
+    margin:15px 0;
+
+    color:#777;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.browse-btn{
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#6C63FF;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.browse-btn:hover{
+
+    background:#5449FF;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   FILE CARD
+=========================== */
+
+.file-card{
+
+    margin-top:35px;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.file-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.file-header i{
+
+    font-size:45px;
+
+    color:#6C63FF;
+
+}
+
+.file-header h3{
+
+    margin-bottom:5px;
+
+}
+
+.file-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.remove-btn{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#EF4444;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.remove-btn:hover{
+
+    background:#DC2626;
+
+}
+
+.upload-btn{
+
+    flex:2;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#22C55E;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.upload-btn:hover{
+
+    background:#16A34A;
+
+}
+
+/* ===========================
+   STATUS
+=========================== */
+
+.upload-status{
+
+    margin-top:30px;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    display:none;
+
+    font-weight:600;
+
+}
+
+.upload-status.success{
+
+    display:block;
+
+    background:#DCFCE7;
+
+    color:#166534;
+
+    border-left:5px solid #22C55E;
+
+}
+
+.upload-status.error{
+
+    display:block;
+
+    background:#FEE2E2;
+
+    color:#991B1B;
+
+    border-left:5px solid #EF4444;
+
+}
+
+/* ===========================
+   CONTINUE BUTTON
+=========================== */
+
+.continue-section{
+
+    margin-top:35px;
+
+    text-align:right;
+
+}
+
+.continue-btn{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#6C63FF;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.continue-btn:hover:not(:disabled){
+
+    background:#5449FF;
+
+    transform:translateY(-3px);
+
+}
+
+.continue-btn:disabled{
+
+    background:#BDBDBD;
+
+    cursor:not-allowed;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .upload-box{
+
+        min-height:260px;
+
+        padding:30px;
+
+    }
+
+    .file-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .continue-section{
+
+        text-align:center;
+
+    }
+
+    .continue-btn{
+
+        width:100%;
+
+    }
+
+}

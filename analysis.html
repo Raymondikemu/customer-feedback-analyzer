@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sentiment Analysis | Customer Feedback Analyzer</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/analysis.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================
+         SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-box">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Customer Feedback Analyzer</h2>
+
+                    <p>Admin Panel</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+
+                        <a href="dashboard.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="upload.html">
+
+                            <i class="fa-solid fa-upload"></i>
+
+                            Upload Reviews
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="reviews.html">
+
+                            <i class="fa-solid fa-list"></i>
+
+                            Reviews List
+
+                        </a>
+
+                    </li>
+
+                    <li class="active">
+
+                        <a href="analysis.html">
+
+                            <i class="fa-solid fa-face-smile"></i>
+
+                            Sentiment Analysis
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="insights.html">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                            Insights
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="reports.html">
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                            Reports
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </aside>
+
+    <!-- ==========================
+         MAIN CONTENT
+    =========================== -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Sentiment Analysis</h1>
+
+                <p>Analyze uploaded customer reviews and visualize sentiment distribution.</p>
+
+            </div>
+
+        </header>
+
+        <!-- ==========================
+             SENTIMENT SUMMARY
+        =========================== -->
+
+        <section class="analysis-summary">
+
+            <div class="analysis-card">
+
+                <i class="fa-solid fa-face-smile"></i>
+
+                <h2 id="positiveCount">0</h2>
+
+                <p>Positive Reviews</p>
+
+            </div>
+
+            <div class="analysis-card">
+
+                <i class="fa-solid fa-face-meh"></i>
+
+                <h2 id="neutralCount">0</h2>
+
+                <p>Neutral Reviews</p>
+
+            </div>
+
+            <div class="analysis-card">
+
+                <i class="fa-solid fa-face-frown"></i>
+
+                <h2 id="negativeCount">0</h2>
+
+                <p>Negative Reviews</p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             CHART PLACEHOLDER
+        =========================== -->
+
+        <section class="analysis-card-large chart-section">
+
+            <canvas id="sentimentChart"></canvas>
+
+        </section>
+
+        <!-- ==========================
+             AI SUMMARY
+        =========================== -->
+
+        <section class="analysis-card-large">
+
+            <h2>AI Summary</h2>
+
+            <div class="summary-box">
+
+                <i class="fa-solid fa-robot"></i>
+
+                <p id="analysisSummary">
+
+                    No analysis has been performed yet.
+
+                    Upload reviews and click
+
+                    <strong>Start Analysis</strong>
+
+                    to generate customer sentiment insights.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             PROGRESS BAR
+        =========================== -->
+
+        <section class="analysis-card-large">
+
+            <h2>Analysis Progress</h2>
+
+            <div class="progress-container">
+
+                <div class="progress-bar" id="progressBar"></div>
+
+            </div>
+
+            <p id="progressText">
+
+                Waiting to start analysis...
+
+            </p>
+
+        </section>
+
+        <!-- ==========================
+             ACTION BUTTONS
+        =========================== -->
+
+        <section class="analysis-actions">
+
+            <button id="startAnalysisBtn" class="analysis-btn">
+
+                <i class="fa-solid fa-play"></i>
+
+                Start Analysis
+
+            </button>
+
+            <button id="continueBtn" class="continue-btn" disabled>
+
+                Continue to Insights
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/analysis.js"></script>
+
+</body>
+
+</html>

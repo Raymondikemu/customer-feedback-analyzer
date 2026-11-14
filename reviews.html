@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reviews List | Customer Feedback Analyzer</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/reviews.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-box">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Customer Feedback Analyzer</h2>
+
+                    <p>Admin Panel</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+
+                        <a href="dashboard.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="upload.html">
+
+                            <i class="fa-solid fa-upload"></i>
+
+                            Upload Reviews
+
+                        </a>
+
+                    </li>
+
+                    <li class="active">
+
+                        <a href="reviews.html">
+
+                            <i class="fa-solid fa-list"></i>
+
+                            Reviews List
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="analysis.html">
+
+                            <i class="fa-solid fa-face-smile"></i>
+
+                            Sentiment Analysis
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="insights.html">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                            Insights
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="reports.html">
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                            Reports
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </aside>
+
+    <!-- ==========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Reviews List</h1>
+
+                <p>View and manage uploaded customer reviews.</p>
+
+            </div>
+
+        </header>
+
+        <!-- Summary Cards -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <i class="fa-solid fa-comments"></i>
+
+                <h2 id="totalReviews">0</h2>
+
+                <p>Total Reviews</p>
+
+            </div>
+
+            <div class="summary-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h2 id="averageRating">0.0</h2>
+
+                <p>Average Rating</p>
+
+            </div>
+
+            <div class="summary-card">
+
+                <i class="fa-solid fa-hourglass-half"></i>
+
+                <h2 id="pendingReviews">0</h2>
+
+                <p>Pending Analysis</p>
+
+            </div>
+
+        </section>
+
+        <!-- Search & Filter -->
+
+        <section class="toolbar">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search reviews...">
+
+            </div>
+
+            <select id="ratingFilter">
+
+                <option value="all">All Ratings</option>
+
+                <option value="5">⭐⭐⭐⭐⭐</option>
+
+                <option value="4">⭐⭐⭐⭐</option>
+
+                <option value="3">⭐⭐⭐</option>
+
+                <option value="2">⭐⭐</option>
+
+                <option value="1">⭐</option>
+
+            </select>
+
+        </section>
+
+        <!-- Reviews Table -->
+
+        <section class="table-card">
+
+            <table id="reviewsTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Customer Review</th>
+
+                        <th>Rating</th>
+
+                        <th>Date</th>
+
+                        <th>Status</th>
+
+                        <th>View</th>
+
+                    </tr>
+
+                </thead>
+
+               <tbody id="reviewsBody">
+
+                    <tr>
+
+                        <td colspan="6" class="empty-table">
+
+                            <i class="fa-solid fa-folder-open"></i>
+
+                            <h3>No Reviews Available</h3>
+
+                            <p>
+
+                                Upload a CSV or Excel file to display customer reviews.
+
+                            </p>
+
+                         </td>
+
+                     </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Pagination -->
+
+        <section class="pagination">
+
+            <button>
+
+                <i class="fa-solid fa-angle-left"></i>
+
+                Previous
+
+            </button>
+
+            <button class="page active">1</button>
+
+            <button class="page">2</button>
+
+            <button class="page">3</button>
+
+            <button>
+
+                Next
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/reviews.js"></script>
+
+</body>
+
+</html>

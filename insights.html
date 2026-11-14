@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Insights & Recommendations | Customer Feedback Analyzer</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/insights.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-box">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Customer Feedback Analyzer</h2>
+
+                    <p>Admin Panel</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+
+                        <a href="dashboard.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="upload.html">
+
+                            <i class="fa-solid fa-upload"></i>
+
+                            Upload Reviews
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="reviews.html">
+
+                            <i class="fa-solid fa-list"></i>
+
+                            Reviews List
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="analysis.html">
+
+                            <i class="fa-solid fa-face-smile"></i>
+
+                            Sentiment Analysis
+
+                        </a>
+
+                    </li>
+
+                    <li class="active">
+
+                        <a href="insights.html">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                            Insights
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="reports.html">
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                            Reports
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </aside>
+
+    <!-- ==========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Insights & Recommendations</h1>
+
+                <p>Business insights generated from customer sentiment analysis.</p>
+
+            </div>
+
+        </header>
+
+        <!-- Overall Score -->
+
+        <section class="overall-score">
+
+            <div class="score-card">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h2 id="overallSentiment">Balanced</h2>
+
+                <p>Overall Sentiment</p>
+
+            </div>
+
+        </section>
+
+        <!-- Insight Cards -->
+
+        <section class="insight-grid">
+
+            <div class="insight-card">
+
+                <h2>
+
+                    <i class="fa-solid fa-thumbs-up"></i>
+
+                    Positive Highlights
+
+                </h2>
+
+                <div class="empty-box">
+
+                    <ul id="positiveHighlights">
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h2>
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    Common Issues
+
+                </h2>
+
+                <div class="empty-box">
+
+                    <ul id="commonIssues">
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- AI Recommendations -->
+
+        <section class="recommendation-card">
+
+            <h2>
+
+                <i class="fa-solid fa-robot"></i>
+
+                AI Recommendations
+
+            </h2>
+
+            <div class="empty-box">
+
+                <ul id="recommendationsList">
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- Trend Placeholder -->
+
+        <section class="recommendation-card">
+
+            <h2>
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Trend Analysis
+
+            </h2>
+
+            <div class="empty-box trend-box">
+
+                <p id="trendAnalysis">
+
+                    Waiting for analysis...
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Navigation -->
+
+        <section class="insight-actions">
+
+            <button class="back-btn" onclick="window.location.href='analysis.html'">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Analysis
+
+            </button>
+
+            <button id="reportBtn" class="report-btn" disabled>
+
+                Proceed to Reports
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/insights.js"></script>
+
+</body>
+
+</html>

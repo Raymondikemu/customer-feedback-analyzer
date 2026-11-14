@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Customer Feedback Analyzer</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/settings.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================
+         SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-box">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Customer Feedback Analyzer</h2>
+
+                    <p>Admin Panel</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+
+                    <li><a href="upload.html"><i class="fa-solid fa-upload"></i> Upload Reviews</a></li>
+
+                    <li><a href="reviews.html"><i class="fa-solid fa-list"></i> Reviews List</a></li>
+
+                    <li><a href="analysis.html"><i class="fa-solid fa-face-smile"></i> Sentiment Analysis</a></li>
+
+                    <li><a href="insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+
+                    <li><a href="reports.html"><i class="fa-solid fa-file-pdf"></i> Reports</a></li>
+
+                    <li class="active"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+
+                    <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </aside>
+
+    <!-- ==========================
+         MAIN CONTENT
+    =========================== -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Settings</h1>
+
+                <p>Manage application data and system information.</p>
+
+            </div>
+
+        </header>
+
+        <!-- ==========================
+             DATA MANAGEMENT
+        =========================== -->
+
+        <section class="settings-card">
+
+            <h2>
+
+                <i class="fa-solid fa-database"></i>
+
+                Data Management
+
+            </h2>
+
+            <p>
+
+                Clear all uploaded reviews, sentiment analysis results,
+                generated insights, and reports from the application.
+
+            </p>
+
+            <button id="clearDataBtn" class="save-btn">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Clear All Data
+
+            </button>
+
+        </section>
+
+        <!-- ==========================
+             SYSTEM INFORMATION
+        =========================== -->
+
+        <section class="settings-card">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                System Information
+
+            </h2>
+
+            <div class="system-info">
+
+                <p><strong>Application:</strong> Customer Feedback Analyzer</p>
+
+                <p><strong>Version:</strong> 1.0</p>
+
+                <p><strong>Frontend:</strong> HTML, CSS & JavaScript</p>
+
+                <p><strong>Status:</strong> Ready for Use</p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             ABOUT
+        =========================== -->
+
+        <section class="settings-card">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                About
+
+            </h2>
+
+            <p>
+
+                Customer Feedback Analyzer is a web-based application developed
+                to analyze customer reviews, classify customer sentiment,
+                generate business insights, and produce summary reports for
+                decision-making.
+
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>
